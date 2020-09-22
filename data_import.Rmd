@@ -58,6 +58,12 @@ pulse_df
 
 don't use read.csv, use read_csv
 
+## export data
+```{r}
+write_csv(mlb_df,"./data/mlb_subtable.csv")
+```
+
+
 
 
 
