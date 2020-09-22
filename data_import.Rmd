@@ -54,7 +54,9 @@ pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 pulse_df
 ```
 
+## comparison with base r
 
+don't use read.csv, use read_csv
 
 
 
