@@ -1,0 +1,12 @@
+---
+title: "data manipulation"
+output: github_document
+---
+
+
+
+```{r}
+samp = rnorm(100)
+length(samp)
+```
+
