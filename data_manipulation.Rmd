@@ -6,7 +6,12 @@ output: github_document
 
 
 ```{r}
-samp = rnorm(100)
-length(samp)
+library(tidyverse)
+```
+
+## load in the fas litters
+```{r}
+litters_df = read_csv("./data/FAS_litters.csv")
+litters_df =  janitor::clean_names(litters_df)
 ```
 
