@@ -76,8 +76,31 @@ mutate(litters_df,
        group = str_to_lower(group))
 ```
 
+## arrange
+```{r}
+arrange(litters_df,pups_born_alive)
+```
 
+##pipe %>%
+```{r}
+litter_data_row = read_csv("./data/FAS_litters.csv")
+litter_clean_name = janitor::clean_names(litter_data_row)
+litter_data_selected = select(litter_clean_name,-pups_survive)
+litter_mutated = mutate(litter_data_selected, wt_gain = gd18_weight - gd0_weight)
+litter_without_missing = drop_na(litter_mutated, gd0_weight)
+litter_without_missing
+```
 
+use the pipe instead
+
+```{r}
+litters_df = 
+  read_csv("./data/FAS_litters.csv") %>%
+  janitor::clean_names() %>%
+  select(-pups_survive) %>%
+  mutate(wt_gain = gd18_weight - gd0_weight) %>%
+  drop_na(gd0_weight)
+```
 
 
 
